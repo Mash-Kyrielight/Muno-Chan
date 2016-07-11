@@ -41,7 +41,7 @@ if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
 </head>
 <body>
 <header>
-	<img src="images/logo.png" alt="logo"/>
+	<img src="images/logo.png" alt=""/>
 	<h1>Muno-Chan</h1>
 </header>
 <article>
