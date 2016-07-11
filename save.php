@@ -26,14 +26,14 @@ function save($word, $ans) {
 	}
 
 	// newWord追加
-	$output = match_array($hash_ary,$newWord);
+	$output = match_array($hash_ary, $newWord);
 
 	// JSONフォーマットへ変換して書き込み
 	$handle = fopen($filename, 'w');
 	fwrite($handle,json_encode($output));
 	fclose($handle);
 
-	if ($output==='err') {
+	if ($output === 'err') {
 		$msg = 'その会話例はすでに登録されています！';
 	} else {
 		$msg = '';
@@ -65,14 +65,13 @@ function checkWord($word) {
   $pass = 'dict.json';
   $json = file_get_contents($pass);
   $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-  $arr = json_decode($json,true);
+  $arr = json_decode($json, true);
   
   if ($arr === null) {
 	// そもそもJSONファイルが空ならtrueをリターン
 	return true;
   } else {
 	foreach ($arr as $value) {
-		var_dump($value);
 	  // 互いの言葉を小文字に統一して比較
 	  if (mb_strtolower($value['word']) === mb_strtolower($word)) {
 		// 同じキーが存在した場合
@@ -90,15 +89,14 @@ function dumpDict() {
   $pass = 'dict.json';
   $json = file_get_contents($pass);
   $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-  $arr = json_decode($json,true);
+  $arr = json_decode($json, true);
   
   if ($arr === null) {
   	  echo 'なんにも登録されていない';
   } else {
 	foreach ($arr as $value) {
-		var_dump($value);
+		echo $value['word'].' : '.$value['ans'].'<br>';
 	}
   }
 }
-
 ?>
