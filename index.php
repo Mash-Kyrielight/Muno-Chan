@@ -36,9 +36,17 @@ if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
 <script src="http://code.jquery.com/jquery-3.0.0.min.js
 "></script>
 <script src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+<header>
+	<img src="images/logo.png" alt=""/>
+	<h1>Muno-Chan</h1>
+</header>
+<article>
+	<img src="images/.png" alt=""/>
+</article>
 <!-- javaScriptで会話するフォーム -->
 <form action="" name="talk">
   <input type="text" name="myword">
