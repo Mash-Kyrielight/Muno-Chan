@@ -40,7 +40,13 @@ if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+<header>
+	<img src="images/logo.png" alt=""/>
+	<h1>Muno-Chan</h1>
+</header>
+<article>
+	<img src="images/.png" alt=""/>
+</article>
 <!-- javaScriptで会話するフォーム -->
 <form action="" name="talk">
   <input type="text" name="myword">
