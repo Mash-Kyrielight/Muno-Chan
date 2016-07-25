@@ -9,8 +9,6 @@ function reply() {
 	"images/Muno-chan.png"
 	];
 	
-	
-	
 	var myword = talk.myword.value;
   
   // テキストが空の場合
