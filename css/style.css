@@ -76,6 +76,7 @@ div#conversation{
 div#msg{
 	color:#fff;
 	font-weight:bold;
+	font-size: 32px;
 	width:55%;
 	background-color:rgba(0,0,0,0.2);
 	height:50%;
