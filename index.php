@@ -1,4 +1,4 @@
-<?php
+<<?php
 require_once 'save.php';
 
 if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
@@ -7,7 +7,7 @@ if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
   $ans = htmlspecialchars($_POST['ans'], ENT_QUOTES, 'UTF-8');
   
   if ($teachWord === '' || $ans === '') {
-	$msg = 'どちらかのテキストが空欄です';
+	$msg = 'なにも教えてくれないの？';
   } else {
 	$checkFlag = checkWord($teachWord);
 	if ($checkFlag === true) {
@@ -41,30 +41,10 @@ if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
 </head>
 <body>
 <header>
-	<img src="images/logo.png" alt=""/>
 	<h1>Muno-Chan</h1>
 </header>
 <article>
-	<img src="images/Muno-chan.png" alt=""/>
-</article>
-	
-<!-- javaScriptで会話するフォーム -->
-<form action="" name="talk">
-  <input type="text" name="myword">
-  <input type="button" value="会話する" onClick="reply()">
-</form>
-
-<br>
-
-<!-- PHPで会話登録するフォーム -->
-<form action="" name="teach" method="post">
-  こう聞かれたら： <input type="text" name="teachWord"><br>
-  こう返す： <input type="text" name="ans"><br>
-  <input type="submit" value="返答例を教えてあげる">
-</form>
-
-<br>
-
+<img id="muno-chan" src="images/Muno-chan2.png" alt=""/>
 <!-- メッセージ表示領域 -->
 <div id="msg">
   <p></p>
@@ -72,6 +52,26 @@ if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
     <p><?=htmlspecialchars($msg, ENT_QUOTES, 'UTF-8')?></p>
   <?php endif; ?>
 </div>
+<div id="conversation">
+<!-- javaScriptで会話するフォーム -->
+<form action="" name="talk">
+  <input type="text" name="myword">
+  <input type="button" value="会話する" onClick="reply()">
+</form>
 
+<br>
+<!-- PHPで会話登録するフォーム -->
+<form action="" name="teach" method="post">
+  <div id="teach">こう聞かれたら： <input type="text" name="teachWord"></div>
+  <div id="teach">こう返す： <input type="text" name="ans"></div>
+  <input type="submit" value="返答例を教えてあげる">
+</form>
+
+<br>
+</div><!--id conversation-->
+</article>
+<footer>
+	<small>&copy; 2016 AI development Muno-Chan</small>
+</footer>
 </body>
 </html>
