@@ -2,11 +2,21 @@
 
 // 返答用関数
 function reply() {
-  var myword = talk.myword.value;
+	
+	var img = [
+	"images/Muno-chan2.png",
+	"images/Muno-chan3.png",
+	"images/Muno-chan.png"
+	];
+	
+	
+	
+	var myword = talk.myword.value;
   
   // テキストが空の場合
   if (myword === "") {
-	$("#msg").html("あなたは寡黙な方ですね");
+	$("#msg").html("何も喋らないの？");
+	$("img").attr("src",img[0]);
 
   // テキストに言葉が入っている場合
   } else {
@@ -21,6 +31,7 @@ function reply() {
 			// 両方の言葉を小文字に統一して比較
 			if ((data[i].word).toLowerCase() === myword.toLowerCase()) {
 				$("#msg").html(data[i].ans);
+				$("img").attr("src",img[1]);
 				break;
 			}
 		}
@@ -28,6 +39,7 @@ function reply() {
 		// 辞書に言葉が登録されていなかった場合
 		if (i === data.length) {
 			$("#msg").html("何言っているか聞き取れませんでした");
+			$("img").attr("src",img[0]);
 		}
 	  });
   
