@@ -1,4 +1,4 @@
-<<?php
+<?php
 require_once 'save.php';
 
 if (isset($_POST['teachWord']) && isset($_POST['ans'])) {
